@@ -36,7 +36,10 @@ services:
     ports:
      - ${DB_PORT:-5432}:5432
     volumes:
-      - postgres_db_data:/var/lib/postgresql/data
+      # New path for postgres +18
+      - postgres_db_data:/var/lib/postgresql
+      # old path for postgres <18
+      # - postgres_db_data:/var/lib/postgresql/data
 
 # The Docker networks.
 # networks:
